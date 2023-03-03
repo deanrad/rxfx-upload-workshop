@@ -6,7 +6,7 @@ import { Chooser, Controls, Queue } from "./";
 export const App = () => {
   useWhileMounted(() => {
     // When unmounted, attempt to cancel
-    return () => uploadService.cancel();
+    return () => uploadService.cancelCurrent();
   });
 
   return (

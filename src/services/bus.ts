@@ -2,6 +2,7 @@ import { Bus } from "@rxfx/bus";
 import { Action } from "@rxfx/service";
 
 export const bus = new Bus<Action<any>>();
+Object.assign(window, { bus });
 
 /** Logs FSA bus events to the console - via `console.error` if their type contains 'error'.
  * @since 1.0.8
