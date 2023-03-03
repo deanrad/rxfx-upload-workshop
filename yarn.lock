@@ -1235,15 +1235,7 @@
     redux-thunk "^2.4.2"
     reselect "^4.1.7"
 
-"@rxfx/after@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@rxfx/after/-/after-1.0.2.tgz#e2c8c7d61ba43864cde172f7de1b5f05e4f8caf0"
-  integrity sha512-keLHEAWfZoBWDtnuK2CqBcDnG9c3qFzgrUzApGNkiG3hfYzEtewQXVQ8ws3pUkJF6XKbHVA72F48Dji1BLMiIQ==
-  dependencies:
-    rxjs "^7.3.0"
-    tslib "^2.3.1"
-
-"@rxfx/after@^1.0.2":
+"@rxfx/after@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@rxfx/after/-/after-1.0.3.tgz#1bcc8011139ff0e77c808cf470e398fe0a5929bf"
   integrity sha512-7ynb8SlF9uxl1UPaRYWAgVAUW/S7uzKTJo0iNjHeTmgQtptMAdzLXlXWN1A4sDdhMMh7EwsY1rPqddnQmGqpMg==
@@ -1251,10 +1243,10 @@
     rxjs "^7.8.0"
     tslib "^2.3.1"
 
-"@rxfx/bus@1.0.6", "@rxfx/bus@^1.0.5":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@rxfx/bus/-/bus-1.0.6.tgz#bcc9044d26c1d62ee0a75a7c87dcdd746816b669"
-  integrity sha512-IyCOPyl6v9zCaTpx8DdOnug5y8vMuG7Z2yJNspq879SFdkz5MgPthdEV0oAP7mg1kbpw++qqVuj44onyDAQtZg==
+"@rxfx/bus@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@rxfx/bus/-/bus-1.0.8.tgz#d12ab1112c7afb4a109135b02f4009d68bd5e1b6"
+  integrity sha512-EKDBrw7MywyoLCYN8h5keeyHChwKYxzikBcUiJ+FXCO64xqneMNsL1dJtmvd8AtHOP8mty9FlLA8DGZ7haqE3A==
   dependencies:
     "@rxfx/operators" "^1.0.2"
     rxjs "^7.8.0"
@@ -1270,7 +1262,7 @@
     rxjs "^7.3.0"
     tslib "^2.3.1"
 
-"@rxfx/react@1.0.1":
+"@rxfx/react@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@rxfx/react/-/react-1.0.1.tgz#0cd5bf9e79039655db7916864d1597c8d444a8bc"
   integrity sha512-69rPCVA1vRQq1T0+vIvKZ2ksEYcYte3YScdSchJVIRF+/6FUx18icyao5mAkW5yPGLQrgJFIyUQsLkEnD3Fedw==
@@ -1278,15 +1270,15 @@
     rxjs "^7.3.0"
     tslib "^2.3.1"
 
-"@rxfx/service@1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@rxfx/service/-/service-1.1.5.tgz#bae5b57146da2a0b7ff394b93fb74ad8071bee77"
-  integrity sha512-Ue5vH31xIbVjTHPUAU+mvfj5RienjHQ6kj2qK/PVRT7Rj/BSfXC5ULrmc/5bevcQD8j3o0AKihPPoX6IV1RAXA==
+"@rxfx/service@^1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@rxfx/service/-/service-1.1.6.tgz#516bbf1558714b5335b9a48bd6666ab272f49c7e"
+  integrity sha512-R023Rxdwl8Yj4gm7BMGs3N5Yv3+UZ7OGFFoHEkCAO2XQ7fXzgKX6udU3//LfGwIrIwnnSi7OgrIJ3GyihpI4Og==
   dependencies:
-    "@rxfx/after" "^1.0.2"
-    "@rxfx/bus" "^1.0.5"
+    "@rxfx/after" "^1.0.3"
+    "@rxfx/bus" "^1.0.8"
     "@rxfx/operators" "^1.0.2"
-    rxjs "^7.3.0"
+    rxjs "^7.8.0"
     tslib "^2.3.1"
 
 "@types/q@^1.5.1":

@@ -1,5 +1,7 @@
 import * as React from "react";
-import { uploadService, FileUploadRequest } from "../services/upload-service";
+import { FileUploadRequest } from "../types";
+import { ONE_WEEK } from "./Chooser.mocks";
+
 const { useState } = React;
 
 export const Chooser = () => {
@@ -11,7 +13,6 @@ export const Chooser = () => {
   const uploadVisibility = chosenFile?.name ? "visible" : "hidden";
 
   // Events
-
   const handleFileChosen = (event: Event) => {
     const { files } = event.target as HTMLInputElement;
     const file = (files || [])[0] || {};
@@ -20,9 +21,7 @@ export const Chooser = () => {
   };
 
   const handleUploadClicked = () => {
-    if (!chosenFile?.name) return;
-
-    uploadService.request(chosenFile);
+    console.log("TODO handle chooser/upload/click");
 
     // Clear our state
     setChosenFile({});
