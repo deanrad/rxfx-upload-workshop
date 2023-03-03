@@ -1,11 +1,12 @@
-import { FileUploadRequest } from "../types";
+import { createQueueingService, createService } from "@rxfx/service";
+
+import { FileUploadRequest, UploadProgress } from "../types";
+import { bus } from "./bus";
 import { promiseOfUploadOfFile } from "./upload-impl";
 
-export const uploadService = {
-  request(req: FileUploadRequest) {
-    promiseOfUploadOfFile(req);
-  },
-  cancel() {
-    console.log("TODO handle upload/cancel");
-  },
-};
+/* prettier-ignore */
+export const uploadService = createQueueingService<FileUploadRequest, UploadProgress, Error>(
+  "upload",               // A namespace for events: upload/request
+  bus,                    // The bus our listener will be on
+  promiseOfUploadOfFile   // The effect-determining function
+);

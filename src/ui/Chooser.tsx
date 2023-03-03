@@ -22,8 +22,6 @@ export const Chooser = () => {
   };
 
   const handleUploadClicked = () => {
-    console.log("TODO handle chooser/upload/click");
-
     uploadService.request(chosenFile);
 
     // Clear our state
