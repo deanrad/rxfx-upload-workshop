@@ -1,23 +1,15 @@
-import { useService } from "@rxfx/react";
 import * as React from "react";
-import { uploadService } from "../services/upload-service";
+
+import { EMPTY, ONE_PROGRESSING, ONE_QUEUED } from "./Queue.mocks";
 
 export const Controls = () => {
-  const handleCancelCurrent = () => uploadService.cancelCurrent();
+  const handleCancelCurrent = () => console.log("cancel current");
   const handleCancelcurrentAndQueued = () => {
-    uploadService.cancelCurrentAndQueued();
-
-    // HACK a workaround for the spinner showing too long
-
-    // HACK a workaround for the ui not showing canceled
-    uploadService.state.value.forEach((item) => {
-      item.status !== "canceled" &&
-        uploadService.bus.trigger(uploadService.actions.canceled());
-    });
-    uploadService.bus.trigger(uploadService.actions.complete());
+    console.log("cancel current and queued");
   };
 
-  const { isActive, state: queueItems } = useService(uploadService);
+  const isActive = true;
+  const queueItems = ONE_QUEUED;
 
   return (
     <div className="controls">
