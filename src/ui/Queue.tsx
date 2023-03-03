@@ -1,18 +1,13 @@
 import * as React from "react";
-import { useService, useWhileMounted } from "@rxfx/react";
-import { uploadService } from "../services/upload-service";
+import { ONE_QUEUED } from "./Queue.mocks";
+
 const { useState } = React;
 
 export const Queue = () => {
-  const { isActive, state: queue } = useService(uploadService);
+  const isActive = false;
+  const queue = ONE_QUEUED;
 
-  const [numCompleted, setNumCompleted] = useState(0);
-
-  useWhileMounted(() =>
-    uploadService.bus
-      .query(uploadService.actions.complete.match)
-      .subscribe(({ payload }) => setNumCompleted((i) => i + 1))
-  );
+  const [numCompleted] = useState(0);
 
   const icon = isActive ? "⏳" : "";
   const completedText = numCompleted ? `(${numCompleted} completed)` : "";

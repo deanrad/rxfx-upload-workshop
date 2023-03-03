@@ -1,68 +1,68 @@
 describe("Service: UploadService", () => {
   describe("Payloads", () => {
-    it("Request: name, File");
-    it("Next: name, percentComplete");
-    it("Complete: null");
-    it("Cancel: null");
+    it.todo("Request: name, File");
+    it.todo("Next: name, percentComplete");
+    it.todo("Complete: null");
+    it.todo("Cancel: null");
   });
   describe("Effect", () => {
     describe("Effect: Calls observableUpload, promiseUpload, or mockUpload", () => {
-      it("Concurrency: Queued");
+      it.todo("Concurrency: Queued");
     });
   });
   describe("promiseUpload", () => {
     describe("When: uploadService.request(FILE_NAME.txt)", () => {
-      it("Calls fetch");
+      it.todo("Calls fetch");
       describe("When: Awaited", () => {
-        it("Yields a next event with name, percentComplete 100");
-        it("completes");
+        it.todo("Yields a next event with name, percentComplete 100");
+        it.todo("completes");
       });
     });
   });
   describe("mockUpload", () => {
     describe("When: uploadService.request()", () => {
-      it("calls concat, after");
+      it.todo("calls concat, after");
       describe("When: Awaited", () => {
-        it("Yields several percentComplete updates");
-        it("Completes");
+        it.todo("Yields several percentComplete updates");
+        it.todo("Completes");
       });
     });
     describe("When: uploadService.request()", () => {
       describe("When: uploadService.cancelCurrent();", () => {
-        it("Cancels");
+        it.todo("Cancels");
       });
     });
   });
   describe("observableUpload", () => {
     describe("When: uploadService.request()", () => {
-      it("rxjs/ajax ajax");
+      it.todo("rxjs/ajax ajax");
       describe("When: Awaited", () => {
-        it("Yields several percentComplete updates");
-        it("Completes");
+        it.todo("Yields several percentComplete updates");
+        it.todo("Completes");
       });
     });
     describe("When: uploadService.request()", () => {
       describe("When: uploadService.cancelCurrent();", () => {
-        it("Cancels");
+        it.todo("Cancels");
       });
     });
   });
   describe("Reducer", () => {
     describe("State: State", () => {
-      it("items: [{ name, status, percentComplete }]");
+      it.todo("items: [{ name, status, percentComplete }]");
     });
     describe("Event: Request", () => {
-      it("Pushes a new pending item");
+      it.todo("Pushes a new pending item");
     });
     describe("Event: Next (name)", () => {
-      it("Updates percentComplete of (name)");
+      it.todo("Updates percentComplete of (name)");
     });
     describe("Event: Canceled", () => {
-      it("Changes all pending to canceled");
+      it.todo("Changes all pending to canceled");
     });
     describe("Event: Complete", () => {
-      it("Pops first off the queue");
-      it("Removes all canceled");
+      it.todo("Pops first off the queue");
+      it.todo("Removes all canceled");
     });
   });
 });

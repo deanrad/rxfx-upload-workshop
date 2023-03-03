@@ -2,10 +2,10 @@
   "name": "rxfx-workshop-file-uploader",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "test": "jest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "1.9.3",
@@ -19,6 +19,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "2.7.0",
     "typescript": "4.4.4"
   },
   "resolutions": {

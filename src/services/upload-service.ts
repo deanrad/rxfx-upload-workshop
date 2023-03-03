@@ -5,18 +5,7 @@ import { concat } from "rxjs";
 import { map, takeWhile } from "rxjs/operators";
 import { AjaxResponse, ajax } from "rxjs/ajax";
 import { bus } from "./bus";
-
-export interface FileUploadRequest {
-  name: string;
-  file: File;
-}
-
-// What a queue item looks like in the UI
-export interface QueueItem {
-  name: string;
-  status?: "complete" | "error" | "canceled" | "pending";
-  percentComplete?: string;
-}
+import { FileUploadRequest, QueueItem } from "../types";
 
 export const uploadService = createQueueingService<
   FileUploadRequest,
@@ -29,52 +18,53 @@ export const uploadService = createQueueingService<
   observableOfUploadOfFile,
   // promiseOfUploadOfFile,
   // mockUploadOfFile,
-  (ACs) => (state: QueueItem[] = [], event: Action<FileUploadRequest> = {}) =>
-    produce(state, (items) => {
-      // Adding to the queue
-      if (ACs.request.match(event)) {
-        const item: QueueItem = {
-          name: event.payload.name,
-          status: "pending",
-          percentComplete: "0"
-        };
-        items.push(item);
-      }
+  (ACs) =>
+    (state: QueueItem[] = [], event: Action<FileUploadRequest> = {}) =>
+      produce(state, (items) => {
+        // Adding to the queue
+        if (ACs.request.match(event)) {
+          const item: QueueItem = {
+            name: event.payload.name,
+            status: "pending",
+            percentComplete: "0",
+          };
+          items.push(item);
+        }
 
-      // Modifying the queue
-      const itemToUpdate =
-        items.find(
-          (item) =>
-            item.name === event.payload?.name && item.status !== "canceled"
-        ) || items[0];
+        // Modifying the queue
+        const itemToUpdate =
+          items.find(
+            (item) =>
+              item.name === event.payload?.name && item.status !== "canceled"
+          ) || items[0];
 
-      // HACK mark all canceled - workaround for ACs.canceled lacking a payload
-      if (ACs.canceled.match(event)) {
-        items
-          .filter((item) => item.status === "pending")
-          .forEach((item) => (item.status = "canceled"));
-      }
+        // HACK mark all canceled - workaround for ACs.canceled lacking a payload
+        if (ACs.canceled.match(event)) {
+          items
+            .filter((item) => item.status === "pending")
+            .forEach((item) => (item.status = "canceled"));
+        }
 
-      if (ACs.next.match(event)) {
-        const { loaded, total } = event.payload;
-        const percentComplete = loaded
-          ? String(Math.round((loaded * 100) / total)).padStart(2, "0")
-          : "- ";
+        if (ACs.next.match(event)) {
+          const { loaded, total } = event.payload;
+          const percentComplete = loaded
+            ? String(Math.round((loaded * 100) / total)).padStart(2, "0")
+            : "- ";
 
-        itemToUpdate.percentComplete = percentComplete;
-      }
+          itemToUpdate.percentComplete = percentComplete;
+        }
 
-      if (ACs.complete.match(event)) {
-        // pop one off
-        items.shift();
+        if (ACs.complete.match(event)) {
+          // pop one off
+          items.shift();
 
-        items
-          .filter((item) => item.status === "canceled")
-          .forEach((item) => {
-            delete items[item];
-          });
-      }
-    })
+          items
+            .filter((item) => item.status === "canceled")
+            .forEach((item) => {
+              delete items[item];
+            });
+        }
+      })
 );
 
 function observableOfUploadOfFile({ file }: FileUploadRequest) {
@@ -84,13 +74,13 @@ function observableOfUploadOfFile({ file }: FileUploadRequest) {
     method: "POST",
     body: file,
     headers: {
-      "Content-Type": file.type
+      "Content-Type": file.type,
     },
-    includeUploadProgress: true
+    includeUploadProgress: true,
   }).pipe(
     map((update) => ({
       ...update,
-      name: file.name
+      name: file.name,
     }))
     // TODO complete when we've uploaded - before the entire response is echoed back
     // ala: takeWhile((update) => update.loaded < update.total)
@@ -102,9 +92,9 @@ function promiseOfUploadOfFile({ file }: FileUploadRequest) {
     fetch("https://httpbin.org/post", {
       method: "POST",
       headers: {
-        "Content-Type": file.type
+        "Content-Type": file.type,
       },
-      body: file
+      body: file,
     })
       // Wait until the entire response is recieved
       // (Otherwise the promise resolves when only the headers have arrived)

@@ -1,18 +1,18 @@
 describe("Component: Chooser", () => {
   describe("State", () => {
-    it("Has: chosenFile, uploadCaption, uploadVisibility");
+    it.todo("Has: chosenFile, uploadCaption, uploadVisibility");
   });
   describe("Upload Button", () => {
-    it("Is Hidden");
+    it.todo("Is Hidden");
   });
   describe("When: A File is Chosen FILE_NAME.TXT", () => {
     describe("Upload Button", () => {
-      it("Is Visible");
-      it("Displays the Text Upload");
-      it("Displays the Text FILE_NAME.TXT");
+      it.todo("Is Visible");
+      it.todo("Displays the Text Upload");
+      it.todo("Displays the Text FILE_NAME.TXT");
       describe("When: Clicked", () => {
-        it("Calls uploadService.request with the file");
-        it("Is Hidden");
+        it.todo("Calls uploadService.request with the file");
+        it.todo("Is Hidden");
       });
     });
   });

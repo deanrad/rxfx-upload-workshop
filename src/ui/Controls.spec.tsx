@@ -1,26 +1,32 @@
 describe("Component: Controls", () => {
   describe('"Cancel Current" Button', () => {
-    it("Is Disabled");
+    it.todo("Is Disabled");
     describe("When: uploadService.started", () => {
-      it("Is Enabled");
+      it.todo("Is Enabled");
       describe("When: Clicked", () => {
-        it("Calls: uploadService.cancelCurrent()");
+        it.todo("Calls: uploadService.cancelCurrent()");
       });
       describe("When: uploadService.cancelCurrentAndQueued()", () => {
-        it("Is Disabled");
+        it.todo("Is Disabled");
       });
     });
   });
   describe('"Cancel Current And Queued" Button', () => {
-    it("Is Disabled");
+    it.todo("Is Disabled");
     describe("When: uploadService.started and more than one pending file", () => {
-      it("Is Enabled");
+      it.todo("Is Enabled");
       describe("When: Clicked", () => {
-        it("Calls: uploadService.cancelCurrentAndQueued()");
+        it.todo("Calls: uploadService.cancelCurrentAndQueued()");
       });
       describe("When: uploadService.cancelCurrentAndQueued()", () => {
-        it("Is Disabled");
+        it.todo("Is Disabled");
       });
+    });
+  });
+
+  describe("Snapshot", () => {
+    it("matches", () => {
+      expect({}).toMatchInlineSnapshot(`Object {}`);
     });
   });
 });
