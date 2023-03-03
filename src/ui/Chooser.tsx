@@ -24,8 +24,6 @@ export const Chooser = () => {
   const handleUploadClicked = () => {
     uploadService.request(chosenFile);
 
-    uploadService.request(chosenFile);
-
     // Clear our state
     setChosenFile({});
   };
