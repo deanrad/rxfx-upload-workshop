@@ -38,7 +38,7 @@ export function promiseOfUploadOfFile({ file }: FileUploadRequest) {
     })
       // Wait until the entire response is recieved
       // (Otherwise the promise resolves when only the headers have arrived)
-      // .then((resp) => resp.text())
+      .then((resp) => resp.text())
       // Simulate the one-at-the-end notification
       .then(() => ({ name: file.name, total: 100, loaded: 100 }))
   );

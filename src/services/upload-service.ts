@@ -1,8 +1,9 @@
 import { FileUploadRequest } from "../types";
+import { promiseOfUploadOfFile } from "./upload-impl";
 
 export const uploadService = {
   request(req: FileUploadRequest) {
-    console.log("TODO handle upload/request", req);
+    promiseOfUploadOfFile(req);
   },
   cancel() {
     console.log("TODO handle upload/cancel");
