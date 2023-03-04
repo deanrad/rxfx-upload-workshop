@@ -1,0 +1,28 @@
+{
+  "name": "rxfx-workshop-file-uploader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "1.9.3",
+    "@rxfx/after": "1.0.2",
+    "@rxfx/bus": "1.0.6",
+    "@rxfx/react": "1.0.1",
+    "@rxfx/service": "1.1.5",
+    "immer": "9.0.19",
+    "parcel-bundler": "^1.6.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "typescript": "4.4.4"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
+  },
+  "keywords": []
+}
