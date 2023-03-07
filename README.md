@@ -6,7 +6,6 @@
  
 ## The Finished App
 The finished app looks like this: 
-![RxFxUploaderWalkthrough-Step2 6](https://user-images.githubusercontent.com/24406/223446629-e6cbcc48-c5c1-485f-8170-1137a3ea61f5.gif)
 
 ---
 ## The Starter Skeleton
