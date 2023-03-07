@@ -1,6 +1,7 @@
 import * as React from "react";
 import { FileUploadRequest } from "../types";
 import { ONE_WEEK } from "./Chooser.mocks";
+import { uploadService } from "../services/upload-service";
 
 const { useState } = React;
 
@@ -21,7 +22,7 @@ export const Chooser = () => {
   };
 
   const handleUploadClicked = () => {
-    console.log("TODO handle chooser/upload/click");
+    uploadService.request(chosenFile);
 
     // Clear our state
     setChosenFile({});
