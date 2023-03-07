@@ -1,3 +1,22 @@
+# RxFx Uploader Workshop
+
+- [The Finished App](#the-finished-app)
+- [The Starter Skeleton](#the-starter-skeleton)
+- [The Feature Specification(#the-feature-specification)
+ 
+## The Finished App
+The finished app looks like this: 
+![RxFxUploaderWalkthrough-Step2 6](https://user-images.githubusercontent.com/24406/223446629-e6cbcc48-c5c1-485f-8170-1137a3ea61f5.gif)
+
+---
+## The Starter Skeleton
+The skeleton begins like this:
+
+![RxFxUploaderWalkthrough-Step1](https://user-images.githubusercontent.com/24406/223446498-f7911e23-16cd-4b8d-a19a-540965352e31.gif)
+
+## The Feature Specification
+The SlAY language specification of the app is below
+
 ```yaml
 Component: Chooser
   State:
