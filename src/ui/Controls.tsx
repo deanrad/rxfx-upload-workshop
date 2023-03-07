@@ -1,9 +1,12 @@
 import * as React from "react";
 
 import { EMPTY, ONE_PROGRESSING, ONE_QUEUED } from "./Queue.mocks";
+import { uploadService } from "../services/upload-service";
 
 export const Controls = () => {
-  const handleCancelCurrent = () => console.log("cancel current");
+  const handleCancelCurrent = () => {
+    uploadService.cancelCurrent();
+  };
   const handleCancelcurrentAndQueued = () => {
     console.log("cancel current and queued");
   };
