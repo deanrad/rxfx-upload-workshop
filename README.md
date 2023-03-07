@@ -5,7 +5,7 @@
 - [The Feature Specification](#the-feature-specification)
  
 ## The Finished App
-The finished app looks like this: 
+The finished app looks like this: [Finished Uploader](https://d2jksv3bi9fv68.cloudfront.net/RxFxUploaderFinal.gif)
 
 ---
 ## The Starter Skeleton
