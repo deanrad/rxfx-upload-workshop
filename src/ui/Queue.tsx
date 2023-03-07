@@ -1,11 +1,13 @@
 import * as React from "react";
-import { ONE_QUEUED } from "./Queue.mocks";
+import { useService } from "@rxfx/react";
+import { uploadService } from "../services/upload-service";
+import { EMPTY } from "./Queue.mocks";
 
 const { useState } = React;
 
 export const Queue = () => {
-  const isActive = false;
-  const queue = ONE_QUEUED;
+  const { isActive } = useService(uploadService);
+  const queue = EMPTY;
 
   const [numCompleted] = useState(0);
 

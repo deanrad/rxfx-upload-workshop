@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { EMPTY, ONE_PROGRESSING, ONE_QUEUED } from "./Queue.mocks";
 import { uploadService } from "../services/upload-service";
+import { useService } from "@rxfx/react";
 
 export const Controls = () => {
   const handleCancelCurrent = () => {
@@ -11,7 +12,7 @@ export const Controls = () => {
     console.log("cancel current and queued");
   };
 
-  const isActive = true;
+  const { isActive } = useService(uploadService);
   const queueItems = ONE_QUEUED;
 
   return (

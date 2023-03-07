@@ -19,7 +19,8 @@ export function observableOfUploadOfFile({
     includeUploadProgress: true,
   }).pipe(
     map((update) => ({
-      ...update,
+      total: update.total,
+      loaded: update.loaded,
       name: file.name,
     }))
     // TODO complete when we've uploaded - before the entire response is echoed back
