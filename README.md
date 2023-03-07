@@ -2,7 +2,7 @@
 
 - [The Finished App](#the-finished-app)
 - [The Starter Skeleton](#the-starter-skeleton)
-- [The Feature Specification(#the-feature-specification)
+- [The Feature Specification](#the-feature-specification)
  
 ## The Finished App
 The finished app looks like this: 
