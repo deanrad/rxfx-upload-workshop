@@ -6,8 +6,7 @@ import { EMPTY } from "./Queue.mocks";
 const { useState } = React;
 
 export const Queue = () => {
-  const { isActive } = useService(uploadService);
-  const queue = EMPTY;
+  const { isActive, state: queue } = useService(uploadService);
 
   const [numCompleted, setNumCompleted] = useState(0);
 

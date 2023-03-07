@@ -12,8 +12,7 @@ export const Controls = () => {
     console.log("cancel current and queued");
   };
 
-  const { isActive } = useService(uploadService);
-  const queueItems = ONE_QUEUED;
+  const { isActive, state: queueItems } = useService(uploadService);
 
   return (
     <div className="controls">
